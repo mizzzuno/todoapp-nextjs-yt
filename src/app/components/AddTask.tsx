@@ -2,9 +2,11 @@
 import { addTodo } from "@/api";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/navigation";
 
 const AddTask = () => {
   const [taskTitle, setTaskTitle] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -12,6 +14,7 @@ const AddTask = () => {
     await addTodo({ id: uuidv4(), text: taskTitle });
 
     setTaskTitle("");
+    router.refresh(); // ページを更新
   };
   return (
     <form className="mb-4 space-y-3" onSubmit={handleSubmit}>

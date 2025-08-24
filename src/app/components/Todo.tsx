@@ -3,6 +3,7 @@
 import { Task } from "@/types";
 import { deleteTodo, editTodo } from "@/api";
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 interface TodoProps {
   todo: Task;
@@ -12,6 +13,7 @@ const Todo = ({ todo }: TodoProps) => {
   const ref = useRef<HTMLInputElement>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedTaskTitle, setEditedTaskTitle] = useState(todo.text);
+  const router = useRouter();
 
   useEffect(() => {
     ref.current?.focus();
@@ -23,10 +25,12 @@ const Todo = ({ todo }: TodoProps) => {
   const handleSave = async () => {
     await editTodo(todo.id, editedTaskTitle);
     setIsEditing(false);
+    router.refresh(); // ページを更新
   };
 
   const handleDelete = async () => {
     await deleteTodo(todo.id);
+    router.refresh(); // ページを更新
   };
 
   return (
