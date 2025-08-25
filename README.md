@@ -6,7 +6,21 @@ TypeScript と Next.js を使用したシンプルな Todo アプリケーショ
 
 このプロジェクトは Next.js 15、TypeScript、Tailwind CSS を使用した Todo アプリケーションです。JSON Server を使用してローカルで REST API をシミュレートし、基本的な CRUD 操作（作成、読み取り、更新、削除）を実装しています。
 
+TypeScripとNext.jsの勉強用に、以下の動画を参考に作成しました。
+
 **参考動画**: [Next.js 13 Tutorial](https://youtu.be/VcMW2C9VNtI?si=1PoZdwrKggRipAHZ)
+
+## 学習ポイント
+
+このプロジェクトでは以下の技術や概念を学ぶことができます：
+
+- Next.js 15 の App Router
+- TypeScript の基本的な使用方法
+- Tailwind CSS によるスタイリング
+- React のコンポーネント設計
+- REST API との連携
+- 非同期処理（async/await）
+- CRUD 操作の実装
 
 ## 機能
 
@@ -99,14 +113,4 @@ JSON Server により以下のエンドポイントが利用可能です：
 - Supabase、PlanetScale などの BaaS の利用
 - Next.js API Routes を使用した内蔵 API の実装
 
-## 学習ポイント
 
-このプロジェクトでは以下の技術や概念を学ぶことができます：
-
-- Next.js 15 の App Router
-- TypeScript の基本的な使用方法
-- Tailwind CSS によるスタイリング
-- React のコンポーネント設計
-- REST API との連携
-- 非同期処理（async/await）
-- CRUD 操作の実装
